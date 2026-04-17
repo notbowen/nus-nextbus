@@ -1,10 +1,6 @@
 # NUS NextBus API
 
 Some endpoints I got from vibe-reversing the NUS NextBus Android app.
-Vibe-coded a helper script to extract credentials from a decompiled `.apk`
-file.
-
-NUS please don't expell me 🥺
 
 ## GET Endpoints
 
@@ -53,6 +49,4 @@ Key Identifiers in the App
 
 ## Script Usage
 
-1. Obtain the latest version of the NUS NextBus APK
-2. Decompile it with `jadx` into a output folder
-3. Run `python extract_credentials.py /path/to/output/folder`
+What script?
