@@ -8,51 +8,39 @@ NUS please don't expell me 🥺
 
 ## GET Endpoints
 
-All follow the pattern: {baseURL}{path}?token={token}{&params}
+All follow the pattern:  
+`{baseURL}{path}?token={token}{&params}`
 
-┌───────────────────────┬────────────────────┬───────────────────────────────┐
-│     Function Name     │      URL Path      │         Query Params          │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetListOfBusStops     │ BusStops           │ (none)                        │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetShuttleService     │ ShuttleService     │ &busstopname={name}           │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetActiveBus          │ ActiveBus          │ &route_code={code}            │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetPickupPoint        │ PickupPoint        │ &route_code={code}            │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetBusLocation        │ BusLocation        │ &veh_plate={encodeURI(plate)} │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetRouteMinMaxTime    │ RouteMinMaxTime    │ &route_code={code}            │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetServiceDescription │ ServiceDescription │ (none)                        │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetAnnouncements      │ Announcements      │ (none)                        │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetTickerTapes        │ TickerTapes        │ (none)                        │
-├───────────────────────┼────────────────────┼───────────────────────────────┤
-│ GetPublicity          │ publicity?         │ (no token)                    │
-└───────────────────────┴────────────────────┴───────────────────────────────┘
+| Function Name            | URL Path            | Query Params                          |
+|-------------------------|--------------------|---------------------------------------|
+| GetListOfBusStops       | BusStops           | (none)                                |
+| GetShuttleService       | ShuttleService     | &busstopname={name}                   |
+| GetActiveBus            | ActiveBus          | &route_code={code}                    |
+| GetPickupPoint          | PickupPoint        | &route_code={code}                    |
+| GetBusLocation          | BusLocation        | &veh_plate={encodeURI(plate)}         |
+| GetRouteMinMaxTime      | RouteMinMaxTime    | &route_code={code}                    |
+| GetServiceDescription   | ServiceDescription | (none)                                |
+| GetAnnouncements        | Announcements      | (none)                                |
+| GetTickerTapes          | TickerTapes        | (none)                                |
+| GetPublicity            | publicity?         | (no token)                            |
 
-Batch GET Endpoints (Promise.all over array)
+---
 
-┌───────────────────────┬───────────────────┬─────────────────────┐
-│     Function Name     │     URL Path      │   Per-item Param    │
-├───────────────────────┼───────────────────┼─────────────────────┤
-│ GetAllShuttleServices │ ShuttleService    │ &busstopname={name} │
-├───────────────────────┼───────────────────┼─────────────────────┤
-│ GetAllPickuppoints    │ PickupPoint       │ &route_code={code}  │
-├───────────────────────┼───────────────────┼─────────────────────┤
-│ GetAllCheckpoints     │ CheckPointBusStop │ &route_code={code}  │
-└───────────────────────┴───────────────────┴─────────────────────┘
+## Batch GET Endpoints (Promise.all over array)
+
+| Function Name            | URL Path           | Per-item Param         |
+|-------------------------|--------------------|------------------------|
+| GetAllShuttleServices   | ShuttleService     | &busstopname={name}    |
+| GetAllPickuppoints      | PickupPoint        | &route_code={code}     |
+| GetAllCheckpoints       | CheckPointBusStop  | &route_code={code}     |
+
+---
 
 ## POST Endpoint
 
-┌───────────────────────────┬────────────────────┬───────────┐
-│       Function Name       │      URL Path      │   Body    │
-├───────────────────────────┼────────────────────┼───────────┤
-│ publicityCampaignRegister │ publicity/campaign │ JSON body │
-└───────────────────────────┴────────────────────┴───────────┘
+| Function Name                | URL Path            | Body      |
+|-----------------------------|---------------------|-----------|
+| publicityCampaignRegister   | publicity/campaign  | JSON body |
 
 Key Identifiers in the App
 
